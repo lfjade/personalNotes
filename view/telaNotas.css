@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Quicksand';
+    color: #333333;
+    background-color: #FAF9F6;
+}
+#hero{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    gap: 10px;
+}
+
+#input-notas{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding: 24px;
+    height:100%;
+    width:100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex:1;
+    height:100%
+}
+
+#sidebar{
+    display:flex;
+    flex-direction:column;
+    width: 180px;
+    background-color: #A1C298;
+    padding: 5px;
+}
+
+button{
+    background-color: #6C9A8B;
+    color: #FAF9F6;
+    border: none;
+    border-radius: 5px;
+}
+
+#submit{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#titulo, #texto-nota{
+    background-color: #FFF9E5;
+    border: 1px solid #6C9A8B;
+}
+#titulo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#texto-nota{
+    font-size: 16px;
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    resize: none
+}
+
+label{
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#pensando-antes{
+    font-size: 20px;
+}
+
+#mais-antigas{
+    font-size: 16px;
+    font-weight: bold;
+}

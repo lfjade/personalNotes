@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    script-src 'self';
+    connect-src 'self' http://localhost:3000;
+    ">
+    <title>Bem vinde ao PersonalNotes!</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id = "hero">
+        <div id = "welcome">
+            <p id = "personal-notes">PersonalNotes</p>
+            <p id = "seu-companheiro">seu companheiro de notas</p>
+        </div>
+        <form id = "login">
+            <input type = "text" placeholder = "nome de usuário" id = "nome-de-usuario">
+            <input type = "password" placeholder="senha" id = "senha">
+            <button type = "submit" id = "entrar">entrar</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

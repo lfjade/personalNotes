@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Quicksand';
+    color: #333333;
+    background-color: #FAF9F6;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
+    min-height: 100vh;
+}
+
+#personal-notes {
+    font-size: 64px;
+    font-weight: bolder;
+}
+#seu-companheiro{
+    font-size: 32px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input{
+    background-color: #FFF9E5;
+    border: 1px solid #6C9A8B;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    color: #6C9A8B;
+    font-size: 32px;
+}
+button{
+    background-color: #6C9A8B;
+    color: #FAF9F6;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    margin: 0 auto;
+    font-size: 32px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#login{
+    width: 400px;
+}
+
+input::placeholder{
+    text-align: center;
+    color: #6C9A8B;
+}
+

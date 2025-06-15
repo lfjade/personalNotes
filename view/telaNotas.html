@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    script-src 'self';
+    connect-src 'self' http://localhost:3000;
+    ">
+    <title>Bem vinde ao PersonalNotes!</title>
+    <link rel="stylesheet" href="telaNotas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id = "hero">
+        <div id = "input-notas">
+            <label for = "form-notas">No que você está pensando agora?</label>
+            <form id = "form-notas">
+                <input id = "titulo">
+                <textarea id = "texto-nota"></textarea>
+                <button type = "submit" id = "submit">adicionar nota</button>
+            </form>
+        </div>
+
+        <div id = "sidebar">
+            <spam id = "pensando-antes">No que você estava pensando antes?</spam>
+            <!-- aqui vai entrar os blocos de notas antigas -->
+             <button id = "mais-antigas">mais antigas</button>
+        </div>
+
+    </div>
+    <script src="telaNotas.js"></script>
+</body>
+</html>
