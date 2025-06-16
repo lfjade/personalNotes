@@ -1,1 +1,4 @@
 node_modules/
+db/knexfile.js
+personalnotes-schema.mwb
+personalnotes-schema.mwb.bak
