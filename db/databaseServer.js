@@ -1,7 +1,7 @@
-import express from 'express'
-import cors from 'cors'
-import knex from 'knex'
-import knexconfig from './knexfile.js'
+const express = require('express')
+const cors = require('cors')
+const knex = require('knex')
+const knexconfig = require('./knexfile.js')
 
 const app = express()
 app.use(cors())
