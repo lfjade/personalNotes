@@ -13,6 +13,7 @@ async function createMainWindow(){
         }
     })
     await mainWindow.loadFile(path.join(__dirname, './view/index.html'))
+    server = require('./db/databaseServer')
     
 }
 
