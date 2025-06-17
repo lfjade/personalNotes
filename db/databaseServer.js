@@ -52,6 +52,76 @@ app.post('/login', async (req, res) =>{
     }
 })
 
+//rotas get, update, post, delete de notas
+
+//notas get
+app.get('/notas/:id_usuario', async (req, res) =>{
+    const {id_usuario} = req.params;
+
+    try {
+        const notas = await db('notas').where({id_usuario}).select('*').orderBy('dataEdicao', 'desc')
+        res.status(200).json(notas)
+    } catch (error) {
+        console.error("Erro ao buscar notas: ", error)
+        res.status(500).json({error: 'Erro ao buscar notas.'})
+    }
+    
+})
+
+// notas post
+app.post('/notas', async (req, res) =>{
+    const {titulo, conteudo, id_usuario} = req.body
+
+    if (!titulo || !conteudo || !id_usuario){
+        return res.status(400).json({error: "Título, conteúdo e id_usuário são obrigatórios."})
+    }
+
+    try {
+        const dataEdicao = new Date().toISOString().slice(0,19).replace('T', ' ')
+        const [novoID] = await db('notas').insert({
+            titulo,
+            conteudo,
+            dataEdicao,
+            id_usuario
+        })
+
+        const novaNota = await db('notas').where({id: novoID}).first()
+
+        res.status(201).json(novaNota)
+    } catch (error){
+        console.error("Erro ao criar nova nota: ", error)
+        res.status(500).json({error: 'Erro ao criar nova nota.'})
+    }
+})
+
+// rota put notas
+
+app.put('/notas/:id', async (req, res) =>{
+    const {id} = req.params
+    const {titulo, conteudo} = req.body
+
+    if (!titulo || !conteudo){
+        return res.status(400).json({error: "Título e conteúdo são obrigatórios."})
+    }
+
+    try {
+        const atualizados = await db('notas').where({id}).update({
+            titulo,
+            conteudo,
+            dataEdicao: new Date()
+        })
+
+        if (atualizados ===0){
+            return res.status(404).json({error: "Nota não encontrada."})
+        }
+        
+        res.status(200).json({mensagem: "Nota atualizada com sucesso."})
+    } catch (error){
+        console.error("Erro ao atualizar a nota: ", error)
+        res.status(500).json({error: "Erro ao atualizar a nota."})
+    }
+})
+
 app.listen(3000, () =>{
     console.log('servidor rodando na porta 3000 (!)')
 })
