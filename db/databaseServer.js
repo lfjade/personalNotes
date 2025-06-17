@@ -32,6 +32,26 @@ app.post('/usuarios', async (req, res) =>{
     }
 })
 
+app.post('/login', async (req, res) =>{
+    const {username, senha} = req.body
+    try {
+        const usuario = await db('usuarios').where({username}).first()
+
+        if (!usuario) {
+            return res.status(404).json({error: "Usuário não encontrado."})
+        }
+
+        if (usuario.senha!==senha){
+            return res.status(401).json({error: "Senha incorreta."})
+        }
+
+        return res.status(200).json({message: "Login bem sucedido!", id:usuario.id})
+    } catch (error){
+        console.error("Erro ao tentar login: ", error)
+        return res.status(500).json({error: "Erro interno ao tentar login."})
+    }
+})
+
 app.listen(3000, () =>{
     console.log('servidor rodando na porta 3000 (!)')
 })
