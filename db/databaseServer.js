@@ -122,6 +122,25 @@ app.put('/notas/:id', async (req, res) =>{
     }
 })
 
+// rota delete
+
+app.delete('/notas/:id', async (req, res) =>{
+    const {id}=req.params
+
+    try {
+        const notaRemovida = await db('notas').where({id}).del()
+
+        if (notaRemovida===0){
+            return res.status(404).json({error: 'Nota não encontrada.'})
+        }
+
+        res.status(200).json({message: 'Nota removida com sucesso.'})
+    } catch (error){
+        console.error('Erro ao deletar nota: ', error)
+        res.status(500).json({error: 'Erro ao deletar nota.'})
+    }
+})
+
 app.listen(3000, () =>{
     console.log('servidor rodando na porta 3000 (!)')
 })

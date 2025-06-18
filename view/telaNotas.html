@@ -24,13 +24,19 @@
                 <input id = "titulo">
                 <textarea id = "texto-nota"></textarea>
                 <button type = "submit" id = "submit">adicionar nota</button>
+                <button type="button" id="atualizar" style="display:none">atualizar</button>
+                <button type="button" id="cancelar" style="display:none">cancelar</button>
+                <button type="button" id="excluir" style="display:none">excluir</button>
+
             </form>
         </div>
 
         <div id = "sidebar">
             <spam id = "pensando-antes">No que você estava pensando antes?</spam>
-            <!-- aqui vai entrar os blocos de notas antigas -->
-             <button id = "mais-antigas">mais antigas</button>
+            <ul id="lista-notas">
+
+            </ul>
+            <button id = "mais-antigas">mais antigas</button>
         </div>
 
     </div>
