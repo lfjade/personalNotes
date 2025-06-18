@@ -37,6 +37,7 @@ form{
     width: 180px;
     background-color: #A1C298;
     padding: 5px;
+    position:relative;
 }
 
 button{
@@ -76,9 +77,42 @@ label{
 
 #pensando-antes{
     font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #mais-antigas{
     font-size: 16px;
     font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+ul{
+    list-style-type: none;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+    background-color: #A1C298;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    flex:1;
+}
+
+li {
+  background-color: #FFF9E5;
+  border: 1px solid #6C9A8B;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 3px;
+}
+.nota{
+    cursor: pointer;
+}
+#atualizar, #cancelar, #excluir{
+    cursor:pointer
 }

@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', async () =>{
 
                 const dados = await response.json()
                 console.log("Login realizado com sucesso ", dados)
+                localStorage.setItem('id_usuario', dados.id)
                 window.api.sendLoginSuccess()
 
             } catch (error){
