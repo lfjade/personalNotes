@@ -1,0 +1,7 @@
+18/06/25 03:51 - muito legal, muito bem, estaria pronto se não fossem esses jovens enxeridos
+
+falta tratamento de erros
+MVC
+conexões em pool
+
+provavelmente cadastro (sic)
