@@ -15,6 +15,11 @@ async function createMainWindow(){
     await mainWindow.loadFile(path.join(__dirname, './view/index.html'))
     server = require('./db/databaseServer')
     
+    ipcMain.on('redirecionar', (event, destino) =>{
+        if (mainWindow && destino){
+            mainWindow.loadFile(destino)
+        }
+    })
 }
 
 ipcMain.on('login-success', () =>{
@@ -25,6 +30,7 @@ ipcMain.on('login-success', () =>{
 
 
 app.whenReady().then(createMainWindow)
+
 
 ipcMain.on('fechar', () =>{
     app.quit()
