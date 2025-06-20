@@ -11,3 +11,5 @@ putz tem q ter o banco tbm AAA
         04:01 banco upado
 
 18/06/25 23:01 - pool ok, indo para cadastro
+
+20/06/25 07:44 - cadastro ok, indo pra mvc

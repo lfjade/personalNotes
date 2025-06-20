@@ -15,16 +15,17 @@ async function createMainWindow(){
     await mainWindow.loadFile(path.join(__dirname, './view/index.html'))
     server = require('./db/databaseServer')
     
-    ipcMain.on('redirecionar', (event, destino) =>{
-        if (mainWindow && destino){
-            mainWindow.loadFile(destino)
-        }
-    })
 }
 
 ipcMain.on('login-success', () =>{
     if (mainWindow) {
         mainWindow.loadFile(path.join(__dirname, './view/telaNotas.html'))
+    }
+})
+
+ipcMain.on('abrir-cadastro', () =>{
+    if (mainWindow){
+        mainWindow.loadFile(path.join(__dirname, './view/cadastro.html'))
     }
 })
 
