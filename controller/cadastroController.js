@@ -1,4 +1,4 @@
-import * as Model from '../model/cadastroModel'
+import * as Model from '../model/cadastroModel.js'
 
 export async function handleCadastro(nomeUsuario, senha){
     if (!nomeUsuario) return alert("Nome de usuário não pode ser vazio.")
