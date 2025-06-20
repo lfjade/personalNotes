@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', async () =>{
     const form = document.getElementById('login')
+    const btnCadstro = document.getElementById('cadastro')
+
     form.addEventListener('submit', async (e)=>{
         e.preventDefault()
 
@@ -45,5 +47,8 @@ window.addEventListener('DOMContentLoaded', async () =>{
                 alert("Erro na conexão com o servidor.")
             }
         }
+    })
+    btnCadstro.addEventListener('click', () =>{
+        window.api.redirecionar('cadastro.html')
     })
 })
